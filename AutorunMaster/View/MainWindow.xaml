@@ -1,0 +1,28 @@
+﻿<Window
+    x:Class="AutorunMaster.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AutorunMaster.ViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Autorun Master Details"
+    Width="1200"
+    Height="550"
+    UseLayoutRounding="True"
+    SnapsToDevicePixels="True"
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <ListView x:Name="AutorunListView"
+            Margin="10"
+            HorizontalContentAlignment="Stretch"
+            BorderThickness="0"
+            ItemContainerStyle="{DynamicResource ListViewItemStyle}"
+            ItemTemplate="{StaticResource AutorunObjectDataTemplate}"
+            ItemsSource="{Binding AutorunObjects}" />
+    </Grid>
+</Window>
+
